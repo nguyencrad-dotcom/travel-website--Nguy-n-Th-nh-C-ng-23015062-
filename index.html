@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<title>Travel Website</title>
+<title>Trang chủ</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -11,15 +11,18 @@
 <header>TRAVEL WEBSITE</header>
 
 <nav>
-    <a href="index.html">Trang chủ</a>
+    <a href="index.html" class="active">Trang chủ</a>
     <a href="tour.html">Tour</a>
     <a href="booking.html">Đặt tour</a>
-    <button onclick="toggleDark()">🌙</button>
 </nav>
 
-<!-- SLIDER -->
-<div class="slider">
-    <img id="slide" src="https://images.unsplash.com/photo-1583417319070-4a69db38a482">
+<!-- BANNER -->
+<div class="banner">
+    <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482">
+    <div class="banner-text">
+        <h2>KHÁM PHÁ VIỆT NAM</h2>
+        <a href="tour.html" class="btn">Xem tour</a>
+    </div>
 </div>
 
 <h2 class="title">Tour nổi bật</h2>
@@ -30,34 +33,24 @@
         <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482">
         <h3>Đà Nẵng</h3>
         <p>Thành phố biển đẹp</p>
-        <button onclick="chonTour('Đà Nẵng')">Xem chi tiết</button>
+        <button>Xem chi tiết</button>
     </div>
 
     <div class="card">
         <img src="https://images.unsplash.com/photo-1597047084897-51e81819a499">
         <h3>Đà Lạt</h3>
         <p>Thành phố sương mù</p>
-        <button onclick="chonTour('Đà Lạt')">Xem chi tiết</button>
+        <button>Xem chi tiết</button>
     </div>
 
     <div class="card">
         <img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd">
         <h3>Phú Quốc</h3>
         <p>Thiên đường biển</p>
-        <button onclick="chonTour('Phú Quốc')">Xem chi tiết</button>
+        <button>Xem chi tiết</button>
     </div>
 
 </div>
-
-<!-- POPUP -->
-<div id="popup" class="popup">
-    <div class="popup-content">
-        <p id="popup-text"></p>
-        <button onclick="dongPopup()">Đóng</button>
-    </div>
-</div>
-
-<script src="js/script.js"></script>
 
 </body>
 </html>
