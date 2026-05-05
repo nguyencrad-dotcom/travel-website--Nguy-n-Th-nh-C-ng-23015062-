@@ -1,8 +1,8 @@
 function chonTour(ten) {
-    document.getElementById("thongbao").innerText =
-        "Bạn đã chọn tour " + ten;
+    let tb = document.getElementById("thongbao");
+    tb.innerText = "✔ Bạn đã chọn tour " + ten;
+    tb.style.color = "green";
 }
-
 function datTour() {
 
     let name = document.getElementById("name").value;
