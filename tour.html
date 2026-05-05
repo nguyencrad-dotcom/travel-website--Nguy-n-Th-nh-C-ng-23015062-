@@ -1,11 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tour</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>xin chào</h1>
+
+<h1>Danh sách tour</h1>
+
+<div class="card-container">
+
+    <div class="card">
+        <img src="https://picsum.photos/300/200">
+        <h3>Đà Nẵng</h3>
+        <p>Giá: 3.000.000</p>
+        <button onclick="chonTour('Đà Nẵng')">Chọn tour</button>
+    </div>
+
+    <div class="card">
+        <img src="https://picsum.photos/300/200">
+        <h3>Đà Lạt</h3>
+        <p>Giá: 2.500.000</p>
+        <button onclick="chonTour('Đà Lạt')">Chọn tour</button>
+    </div>
+
+    <div class="card">
+        <img src="https://picsum.photos/300/200">
+        <h3>Phú Quốc</h3>
+        <p>Giá: 4.000.000</p>
+        <button onclick="chonTour('Phú Quốc')">Chọn tour</button>
+    </div>
+
+    <div class="card">
+        <img src="https://picsum.photos/300/200">
+        <h3>Hạ Long</h3>
+        <p>Giá: 3.500.000</p>
+        <button onclick="chonTour('Hạ Long')">Chọn tour</button>
+    </div>
+
+</div>
+
+<p id="thongbao"></p>
+
+<script src="js/script.js"></script>
+
 </body>
 </html>

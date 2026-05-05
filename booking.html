@@ -1,11 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Đặt tour</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>xin chào</h1>
+
+<h1>Đặt tour</h1>
+
+<form onsubmit="return datTour()">
+
+    <input type="text" id="name" placeholder="Họ tên"><br>
+    <input type="text" id="phone" placeholder="SĐT"><br>
+    <input type="email" id="email" placeholder="Email"><br>
+
+    <select id="tour">
+        <option value="">Chọn điểm đến</option>
+        <option>Đà Nẵng</option>
+        <option>Đà Lạt</option>
+    </select><br>
+
+    <input type="date" id="date"><br>
+    <input type="number" id="people" placeholder="Số người"><br>
+
+    <textarea placeholder="Ghi chú"></textarea><br>
+
+    <button type="submit">Đặt tour</button>
+
+</form>
+
+<p id="message"></p>
+
+<script src="js/script.js"></script>
+
 </body>
 </html>
