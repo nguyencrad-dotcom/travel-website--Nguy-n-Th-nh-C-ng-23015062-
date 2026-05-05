@@ -94,3 +94,18 @@ width:100%;
 margin:10px 0;
 padding:8px;
 }
+.title{
+    text-align: center;
+    margin: 30px 0;
+    font-size: 28px;
+    font-weight: bold;
+}
+form{
+    width: 300px;
+    margin: 30px auto;
+}
+#thongbao, #message{
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
