@@ -1,39 +1,40 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <title>Tour</title>
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<title>Tour</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<h1>Danh sách tour</h1>
+<header>DANH SÁCH TOUR</header>
 
 <div class="card-container">
 
     <div class="card">
-        <img src="https://picsum.photos/300/200">
+        <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482">
         <h3>Đà Nẵng</h3>
         <p>Giá: 3.000.000</p>
         <button onclick="chonTour('Đà Nẵng')">Chọn tour</button>
     </div>
 
     <div class="card">
-        <img src="https://picsum.photos/300/200">
+        <img src="https://images.unsplash.com/photo-1597047084897-51e81819a499">
         <h3>Đà Lạt</h3>
         <p>Giá: 2.500.000</p>
         <button onclick="chonTour('Đà Lạt')">Chọn tour</button>
     </div>
 
     <div class="card">
-        <img src="https://picsum.photos/300/200">
+        <img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd">
         <h3>Phú Quốc</h3>
         <p>Giá: 4.000.000</p>
         <button onclick="chonTour('Phú Quốc')">Chọn tour</button>
     </div>
 
     <div class="card">
-        <img src="https://picsum.photos/300/200">
+        <img src="https://images.unsplash.com/photo-1528127269322-539801943592">
         <h3>Hạ Long</h3>
         <p>Giá: 3.500.000</p>
         <button onclick="chonTour('Hạ Long')">Chọn tour</button>
@@ -41,7 +42,13 @@
 
 </div>
 
-<p id="thongbao"></p>
+<!-- POPUP -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <p id="popup-text"></p>
+        <button onclick="dongPopup()">Đóng</button>
+    </div>
+</div>
 
 <script src="js/script.js"></script>
 
