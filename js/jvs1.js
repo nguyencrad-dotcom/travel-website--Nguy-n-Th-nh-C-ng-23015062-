@@ -1,26 +1,118 @@
-/* ========================= */
-/* IMAGE HOVER EFFECT */
-/* ========================= */
+/* SIDEBAR */
 
-const images =
-document.querySelectorAll(
-'.full-img, .image-grid img, .city-card img'
-);
+const sidebarLinks =
+document.querySelectorAll('.sidebar-box a');
 
-images.forEach(img => {
+const sections =
+document.querySelectorAll('.article-section');
 
-  img.addEventListener('mouseenter', () => {
+/* SMOOTH SCROLL */
 
-    img.style.transform =
-    'scale(1.03)';
+sidebarLinks.forEach(link => {
+
+  link.addEventListener('click', e => {
+
+    e.preventDefault();
+
+    const id =
+    link.getAttribute('href');
+
+    const target =
+    document.querySelector(id);
+
+    window.scrollTo({
+
+      top: target.offsetTop - 40,
+
+      behavior:'smooth'
+
+    });
 
   });
 
-  img.addEventListener('mouseleave', () => {
+});
 
-    img.style.transform =
-    'scale(1)';
+/* ACTIVE LINK */
+
+window.addEventListener('scroll', () => {
+
+  let current = '';
+
+  sections.forEach(section => {
+
+    const sectionTop =
+    section.offsetTop - 220;
+
+    if(pageYOffset >= sectionTop){
+
+      current =
+      section.getAttribute('id');
+
+    }
 
   });
+
+  sidebarLinks.forEach(link => {
+
+    link.classList.remove('active');
+
+    if(
+      link.getAttribute('href')
+      === `#${current}`
+    ){
+
+      link.classList.add('active');
+
+    }
+
+  });
+
+});
+
+/* SCROLL ANIMATION */
+
+const observer =
+new IntersectionObserver(entries => {
+
+  entries.forEach(entry => {
+
+    if(entry.isIntersecting){
+
+      entry.target.classList.add('show');
+
+    }
+
+  });
+
+},{
+  threshold:0.15
+});
+
+sections.forEach(section => {
+
+  section.classList.add('hidden');
+
+  observer.observe(section);
+
+});
+
+/* HEADER SHADOW */
+
+const header =
+document.querySelector('.header');
+
+window.addEventListener('scroll', () => {
+
+  if(window.scrollY > 20){
+
+    header.style.boxShadow =
+    '0 10px 30px rgba(0,0,0,0.06)';
+
+  }else{
+
+    header.style.boxShadow =
+    'none';
+
+  }
 
 });
