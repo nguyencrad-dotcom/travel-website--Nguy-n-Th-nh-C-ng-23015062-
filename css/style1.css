@@ -445,3 +445,11 @@ body{
   }
 
 }
+.full-img,
+.image-grid img,
+.city-card img{
+
+  transition:
+  transform 0.35s ease;
+
+}
