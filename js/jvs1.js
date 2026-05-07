@@ -1,7 +1,16 @@
-/* smooth scroll */
+/* ========================= */
+/* SIDEBAR LINKS */
+/* ========================= */
 
 const sidebarLinks =
-  document.querySelectorAll('.sidebar-box a');
+document.querySelectorAll('.sidebar-box a');
+
+const sections =
+document.querySelectorAll('.article-section');
+
+/* ========================= */
+/* SMOOTH SCROLL */
+/* ========================= */
 
 sidebarLinks.forEach(link => {
 
@@ -10,45 +19,52 @@ sidebarLinks.forEach(link => {
     e.preventDefault();
 
     const targetId =
-      link.getAttribute('href');
+    link.getAttribute('href');
 
-    const target =
-      document.querySelector(targetId);
+    const targetSection =
+    document.querySelector(targetId);
 
-    window.scrollTo({
+    if(targetSection){
 
-      top: target.offsetTop - 30,
+      window.scrollTo({
 
-      behavior: 'smooth'
+        top:
+        targetSection.offsetTop - 40,
 
-    });
+        behavior:'smooth'
+
+      });
+
+    }
 
   });
 
 });
 
-
-/* active menu while scrolling */
-
-const sections =
-  document.querySelectorAll('.article-section');
+/* ========================= */
+/* ACTIVE SIDEBAR */
+/* ========================= */
 
 window.addEventListener('scroll', () => {
 
-  let current = '';
+  let currentSection = '';
 
   sections.forEach(section => {
 
     const sectionTop =
-      section.offsetTop - 200;
+    section.offsetTop - 220;
 
     const sectionHeight =
-      section.clientHeight;
+    section.clientHeight;
 
-    if(pageYOffset >= sectionTop){
+    if(
+      pageYOffset >= sectionTop &&
+      pageYOffset <
+      sectionTop + sectionHeight
+    ){
 
-      current =
-        section.getAttribute('id');
+      currentSection =
+      section.getAttribute('id');
 
     }
 
@@ -60,7 +76,7 @@ window.addEventListener('scroll', () => {
 
     if(
       link.getAttribute('href')
-      === `#${current}`
+      === `#${currentSection}`
     ){
 
       link.classList.add('active');
@@ -71,33 +87,79 @@ window.addEventListener('scroll', () => {
 
 });
 
-
-/* fade in animation */
+/* ========================= */
+/* SCROLL ANIMATION */
+/* ========================= */
 
 const observer =
-  new IntersectionObserver(entries => {
+new IntersectionObserver(entries => {
 
-    entries.forEach(entry => {
+  entries.forEach(entry => {
 
-      if(entry.isIntersecting){
+    if(entry.isIntersecting){
 
-        entry.target.classList.add('show');
+      entry.target.classList.add('show');
 
-      }
+    }
 
-    });
-
-  }, {
-    threshold:0.15
   });
 
+},{
+  threshold:0.15
+});
 
-document
-.querySelectorAll('.article-section')
-.forEach(section => {
+sections.forEach(section => {
 
   section.classList.add('hidden');
 
   observer.observe(section);
+
+});
+
+/* ========================= */
+/* IMAGE PARALLAX */
+/* ========================= */
+
+const images =
+document.querySelectorAll(
+'.full-img, .image-grid img'
+);
+
+window.addEventListener('scroll', () => {
+
+  const scrollY =
+  window.scrollY;
+
+  images.forEach(img => {
+
+    const speed = 0.02;
+
+    img.style.transform =
+    `translateY(${scrollY * speed}px)`;
+
+  });
+
+});
+
+/* ========================= */
+/* HEADER SHADOW */
+/* ========================= */
+
+const header =
+document.querySelector('.header');
+
+window.addEventListener('scroll', () => {
+
+  if(window.scrollY > 20){
+
+    header.style.boxShadow =
+    '0 10px 30px rgba(0,0,0,0.06)';
+
+  }else{
+
+    header.style.boxShadow =
+    'none';
+
+  }
 
 });
